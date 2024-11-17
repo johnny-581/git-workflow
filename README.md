@@ -1,4 +1,4 @@
-# git-workflow
+# Git Workflow
 
 ## Before making any changes
 Always pull the latest changes from the remote repository before starting new work. 
@@ -70,7 +70,10 @@ Clean up local stale branches:
 git fetch --prune
 ```
 
-## Additional workflow from https://stackoverflow.com/questions/457927/git-workflow-and-rebase-vs-merge-questions:
+\
+\
+\
+Workflow from https://stackoverflow.com/questions/457927/git-workflow-and-rebase-vs-merge-questions:
 ```
 clone the remote repository
 git checkout -b my_new_feature
