@@ -16,7 +16,7 @@ Equivalently, git pull downloads changes and merges:
 git checkout main
 git pull origin main
 ```
-Then create and swich to a new branch. You must make your changes in this new branch, so that later it can be reviewed and merged into the main branch:
+Then create and swich to a new branch. You must make your changes in this new branch, so that later it can be pushed to the remote, reviewed, and merged into the main branch:
 ```
 git branch <branch-name>
 git checkout <branch-name>
