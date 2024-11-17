@@ -26,22 +26,20 @@ OR
 git checkout -b <branch-name>
 ```
 
-## Regularly stage, commit, and push your changes
+## Regularly stage and commit your changes
 ```
 git add .
 git commit -m "Your commit message"
-git push origin <branch-name>
 ```
 
 ## Keeping Your Branch Up-to-Date
 If other collaborators are working on the same project, it’s essential to keep your branch up-to-date with the latest changes from the main branch.
-Rebase your branch with main:
+Rebase your branch with main if you want a clean, linear commit history. This applies your changes on top of the latest main branch:
 ```
 git checkout <branch-name>
 git rebase main
 ```
-This applies your changes on top of the latest main branch, resulting in a clean commit history.
-Alternatively, you can use merge if you’re not comfortable with rebasing:
+Alternatively, use merge if you prefer preserving the history:
 ```
 git merge main
 ```
@@ -54,14 +52,20 @@ git rebase --continue  # If using rebase
 git commit             # If using merge
 ```
 
+## Submitting a pull request
+push your branch:
+```
+git push origin <branch-name>
+```
+Open a Pull Request (PR) on the remote platform (Git). Accept the PR, the feature branch will be deleted in the process.
+
 ## Cleaning Up
 Delete branches that have been merged:
 ```
+git checkout main
 git branch -d <branch-name>
-git push origin --delete <branch-name>
 ```
 Clean up local stale branches:
 ```
 git fetch --prune
 ```
-
