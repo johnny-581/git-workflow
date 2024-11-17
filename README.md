@@ -69,3 +69,23 @@ Clean up local stale branches:
 ```
 git fetch --prune
 ```
+
+## Additional workflow from https://stackoverflow.com/questions/457927/git-workflow-and-rebase-vs-merge-questions:
+```
+clone the remote repository
+git checkout -b my_new_feature
+..work and commit some stuff
+git rebase master
+..work and commit some stuff
+git rebase master
+..finish the feature, commit
+git rebase master
+git push # May need to force push
+...submit PR, wait for a review, make any changes requested for the PR
+git rebase master
+git push # Will probably need to force push (-f), due to previous rebases from master
+...accept the PR, most likely also deleting the feature branch in the process
+git checkout master
+git branch -d my_new_feature
+git remote prune origin
+```
