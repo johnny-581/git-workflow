@@ -1,5 +1,21 @@
 # git-workflow
 
+## fetch then merge is equivalent to pull
+### git fetch downloads changes, but does not merge
+```
+git fetch origin
+git log origin/main
+```
+```
+git checkout main
+git merge origin/main
+```
+### git pull downloads changes and merges
+```
+git pull origin main
+```
+
+
 ## Before you make any changes:
 make sure you pull the latest changes from the remote repository:  
 ```
