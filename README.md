@@ -1,7 +1,8 @@
 # git-workflow
 
-## fetch then merge is equivalent to pull
-### git fetch downloads changes, but does not merge
+## Before making any changes
+Always pull the latest changes from the remote repository before starting new work. 
+git fetch downloads changes, but does not merge:
 ```
 git fetch origin
 git log origin/main
@@ -10,33 +11,57 @@ git log origin/main
 git checkout main
 git merge origin/main
 ```
-### git pull downloads changes and merges
+Equivalently, git pull downloads changes and merges:
 ```
-git pull origin main
-```
-
-
-## Before you make any changes:
-make sure you pull the latest changes from the remote repository:  
-```
-git fetch origin main
 git checkout main
 git pull origin main
 ```
 Then create and swich to a new branch. You must make your changes in this new branch, so that later it can be reviewed and merged into the main branch:
 ```
-git branch <your_branch>
-git checkout <your_branch>
-``` 
-merge the local main with your branch:
+git branch <branch-name>
+git checkout <branch-name>
 ```
-git merge main
+OR
+```
+git checkout -b <branch-name>
 ```
 
 ## Regularly stage, commit, and push your changes
 ```
 git add .
 git commit -m "Your commit message"
-git push origin <your_branch>
+git push origin <branch-name>
 ```
-Replace "Your commit message" with a brief, informative description of the changes included in the commit.
+
+## Keeping Your Branch Up-to-Date
+If other collaborators are working on the same project, it’s essential to keep your branch up-to-date with the latest changes from the main branch.
+Rebase your branch with main:
+```
+git checkout <branch-name>
+git rebase main
+```
+This applies your changes on top of the latest main branch, resulting in a clean commit history.
+Alternatively, you can use merge if you’re not comfortable with rebasing:
+```
+git merge main
+```
+Resolve merge conflicts if they occur during rebasing or merging:
+```
+git status
+# Manually resolve conflicts in your editor
+git add <conflicted-files>
+git rebase --continue  # If using rebase
+git commit             # If using merge
+```
+
+## Cleaning Up
+Delete branches that have been merged:
+```
+git branch -d <branch-name>
+git push origin --delete <branch-name>
+```
+Clean up local stale branches:
+```
+git fetch --prune
+```
+
