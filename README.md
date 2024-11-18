@@ -69,6 +69,10 @@ Clean up local stale branches:
 ```
 git fetch --prune
 ```
+## PS. To see all local and remote branches
+```
+git branch -a
+```
 
 \
 \
