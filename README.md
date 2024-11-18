@@ -82,9 +82,9 @@ To set an upstream (remote) branch:
 ```
 git push -u origin <branch-name>
 OR
-git branch -u origin/main my-branch
+git branch -u origin/<branch-name> <branch-name>
 OR
-git branch -u origin/main
+git branch -u origin/<branch-name>
 ```
 To update your local Git configuration to reflect the default branch in the remote:
 ```
