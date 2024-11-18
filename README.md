@@ -18,12 +18,11 @@ git pull origin main
 ```
 Then create and swich to a new branch. You must make your changes in this new branch, so that later it can be pushed to the remote, reviewed, and merged into the main branch:
 ```
-git branch <branch-name>
-git checkout <branch-name>
-```
-OR
-```
 git checkout -b <branch-name>
+```
+Connect a upstream (remote) branch while pushing the new branch for the first time:
+```
+git push -u origin <branch-name>
 ```
 
 ## Regularly stage and commit your changes
@@ -69,15 +68,33 @@ Clean up local stale branches:
 ```
 git fetch --prune
 ```
-## PS. To see all local and remote branches
+
+## Remote Tracking
+To see all local and remote branches:
 ```
 git branch -a
+```
+To see which branch your current branch is tracking, use:
+```
+git branch -vv
+```
+To set an upstream (remote) branch:
+```
+git push -u origin <branch-name>
+OR
+git branch -u origin/main my-branch
+OR
+git branch -u origin/main
+```
+To update your local Git configuration to reflect the default branch in the remote:
+```
+git remote set-head origin -a
 ```
 
 \
 \
 \
-Workflow from https://stackoverflow.com/questions/457927/git-workflow-and-rebase-vs-merge-questions:
+The following workflow is from https://stackoverflow.com/questions/457927/git-workflow-and-rebase-vs-merge-questions:
 ```
 clone the remote repository
 git checkout -b my_new_feature
