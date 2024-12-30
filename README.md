@@ -96,7 +96,8 @@ git remote remove origin
 ```
 To add a remote:
 ```
-git remote add origin yourRemoteUrl & then git push -u origin master
+git remote add origin <yourRemoteUrl>
+git push -u origin main
 ```
 
 \
