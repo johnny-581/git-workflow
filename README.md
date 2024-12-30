@@ -90,6 +90,14 @@ To update your local Git configuration to reflect the default branch in the remo
 ```
 git remote set-head origin -a
 ```
+To remove a remote:
+```
+git remote remove origin
+```
+To add a remote:
+```
+git remote add origin yourRemoteUrl & then git push -u origin master
+```
 
 \
 \
