@@ -94,7 +94,7 @@ To remove a remote:
 ```
 git remote remove origin
 ```
-To add a remote:
+To add a remote (connect local repository to the remote - github account):
 ```
 git remote add origin <yourRemoteUrl>
 git push -u origin main
