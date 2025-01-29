@@ -99,6 +99,10 @@ To add a remote (connect local repository to the remote - github account):
 git remote add origin <yourRemoteUrl>
 git push -u origin main
 ```
+To force replace a local branch with its remote branch:
+```
+git reset --hard origin/<branch-name>
+```
 
 \
 \
